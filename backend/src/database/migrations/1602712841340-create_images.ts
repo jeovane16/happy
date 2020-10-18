@@ -10,6 +10,7 @@ export class createImages1602712841340 implements MigrationInterface {
             name: "id",
             type: "integer",
             unsigned: true,
+            isGenerated: true,
             isPrimary: true,
             generationStrategy: "increment",
           },
@@ -37,6 +38,6 @@ export class createImages1602712841340 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    queryRunner.dropTable("images");
+    await queryRunner.dropTable("images");
   }
 }
